@@ -1,0 +1,6 @@
+fastmcp
+httpx
+habanero
+python-dotenv
+starlette
+uvicorn
