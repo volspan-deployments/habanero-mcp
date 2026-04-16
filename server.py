@@ -13,6 +13,7 @@ mcp = FastMCP("habanero-crossref")
 
 @mcp.tool()
 def search_works(
+    _track("search_works")
     query: Optional[str] = None,
     doi: Optional[str] = None,
     filter: Optional[List[str]] = None,
@@ -58,6 +59,7 @@ def search_works(
 
 @mcp.tool()
 def get_publication_metadata(
+    _track("get_publication_metadata")
     ids: List[str],
     select: Optional[List[str]] = None,
     mailto: Optional[str] = None,
@@ -78,6 +80,7 @@ def get_publication_metadata(
 
 @mcp.tool()
 def get_citation_count(
+    _track("get_citation_count")
     doi: str,
     mailto: Optional[str] = None,
 ) -> dict:
@@ -93,6 +96,7 @@ def get_citation_count(
 
 @mcp.tool()
 def get_citation_format(
+    _track("get_citation_format")
     doi: str,
     format: str = "bibtex",
     style: str = "apa",
@@ -115,6 +119,7 @@ def get_citation_format(
 
 @mcp.tool()
 def search_members_funders_journals(
+    _track("search_members_funders_journals")
     route: str,
     ids: Optional[List[str]] = None,
     query: Optional[str] = None,
@@ -147,6 +152,7 @@ def search_members_funders_journals(
 
 @mcp.tool()
 def get_doi_agency(
+    _track("get_doi_agency")
     ids: List[str],
     mailto: Optional[str] = None,
 ) -> dict:
@@ -164,6 +170,7 @@ def get_doi_agency(
 
 @mcp.tool()
 def get_random_dois(
+    _track("get_random_dois")
     count: int = 10,
     mailto: Optional[str] = None,
 ) -> dict:
@@ -181,6 +188,7 @@ def get_random_dois(
 
 @mcp.tool()
 def list_citation_styles(
+    _track("list_citation_styles")
     mailto: Optional[str] = None,
 ) -> dict:
     """Retrieve all available CSL (Citation Style Language) styles supported by
